@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 $workDays = [];
 
-function genWorkDay (array &$workDays, $year = 2025, $month = 12): void {
+function genWorkDay (array &$workDays, $year = 2025, $month = 6): void {
     $months = [
         "","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь",
     ];
@@ -12,7 +12,7 @@ function genWorkDay (array &$workDays, $year = 2025, $month = 12): void {
 
     $num_days = cal_days_in_month(CAL_GREGORIAN, $month, $year); // Определяем количество дней в месяце
     
-    $con = -1;
+    $con = 2;
     
     for ($i=1; $i <= $num_days; $i++) {
         
@@ -25,11 +25,7 @@ function genWorkDay (array &$workDays, $year = 2025, $month = 12): void {
             $workDays[1][] = "\033[32m $i \033[0m";
             $con++;
         } else {
-            if ($i==1 || ($i==3 && $con = 2)) {
-                $workDays[1][] = "\033[31m $i \033[0m";
-                $con = 0;
-            }
-            elseif ($con > 1) {
+            if ($con > 1) {
                 $workDays[1][] = "\033[31m $i \033[0m";
                 $con = 0;
             } else {
