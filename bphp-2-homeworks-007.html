@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФОРМА</title>
+</head>
+<body>
+    <main style="text-align: center; padding: 10%;">
+        <div>
+            <h1>Форма отправки файла</h1>
+        </div>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            C каким именем сохранить файл на сервере: <input type = "text" name = "u_file_name" placeholder="Имя для файла"> <br><br>
+            <input type="file" name = "file_name" placeholder="выберите файл"> <br><br>
+            <input type="submit" value="Отправить фаил">
+        </form>
+    </main>
+</body>
+</html>
